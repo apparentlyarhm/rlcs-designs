@@ -2,7 +2,7 @@ import { CarDesign } from './types';
 
 export const mockDesigns: CarDesign[] = [
   {
-    id: 'b20eed71-2556-44bf-bcb0-d232e74fa410',
+    id: 'uuid1',
     description: 'from ranked',
     playerUName: '@trook_rl',
     bakkesmodCode: 'goeDAAAAAAAAAAAAAAAAAAAAAA==',
@@ -17,11 +17,11 @@ export const mockDesigns: CarDesign[] = [
     createdAt: '2025-10-02T10:00:00Z',
   },
   {
-    id: '4b158383-4c20-4650-a874-e1c4a217d240',
+    id: 'uuid2',
     description: 'from ranked',
     playerUName: '@akaguhh',
     bakkesmodCode: 'hgiFBcAAAAAAAAAAAAAAAAAAAA==',
-    imageUrls: ['/images/designs/akaguhh1.jpeg','/images/designs/akaguhh2.jpeg'],
+    imageUrls: ['/images/designs/akaguhh1.jpg','/images/designs/akaguhh2.jpg'],
     items: {
       body: 'Black Fennec',
       decal: 'TW Lunation',
