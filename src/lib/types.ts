@@ -1,7 +1,10 @@
 export interface CarDesign {
   id: string;
   description: string;
-  playerUName: string;
+  player: {
+    name: string,
+    x_link: string
+  }
   bakkesmodCode: string;
   imageUrls: string[];
   items: {

@@ -4,7 +4,10 @@ export const mockDesigns: CarDesign[] = [
   {
     id: 'uuid1',
     description: 'from ranked',
-    playerUName: '@trook_rl',
+    player:{
+      name: '@trook_rl',
+      x_link:''
+    },
     bakkesmodCode: 'goeDAAAAAAAAAAAAAAAAAAAAAA==',
     imageUrls: ['/images/designs/trook_1.jpg', '/images/designs/trook_2.jpg'],
     items: {
@@ -19,7 +22,10 @@ export const mockDesigns: CarDesign[] = [
   {
     id: 'uuid2',
     description: 'from ranked',
-    playerUName: '@akaguhh',
+    player:{
+      name: '@akaguhh',
+      x_link:''
+    },
     bakkesmodCode: 'hgiFBcAAAAAAAAAAAAAAAAAAAA==',
     imageUrls: ['/images/designs/akaguhh1.jpg','/images/designs/akaguhh2.jpg'],
     items: {
