@@ -1,3 +1,4 @@
+import { CopyIcon, RandomIcon } from "@/components/icons";
 import { CarDesign } from "@/lib/types";
 
 async function getDesignById(id: string): Promise<CarDesign | null> {
@@ -83,9 +84,22 @@ export default async function DesignDetails({ params }: { params: { id: string }
 
                 </div>
 
-                <button className="btn py-10 rounded-3xl border-1 border-info btn-info text-lg">
+                <button className="btn py-10 rounded-3xl border-1 text-lg">
                     Copy code
+                    <CopyIcon size={20} />
                 </button>
+
+                <div className="flex flex-row gap-1">
+                    <button className="btn py-10 rounded-3xl border-1 btn-primary text-sm">
+                        Endorse
+                        <CopyIcon size={20} />
+                    </button>
+
+                    <button className="btn py-10 rounded-3xl border-1 btn-secondary text-sm">
+                        Randomize
+                        <RandomIcon size={24} />
+                    </button>
+                </div>
             </div>
         </div>
     );
