@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { nunito } from "@/config/fonts";
 import clsx from "clsx";
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: "Car Designs",
@@ -15,11 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="silk" className="">
-      <body
-        className={clsx('', nunito.className)}
-      >
-        {children}
-      </body>
+      <Providers>
+
+        <body
+          className={clsx('', nunito.className)}
+        >
+          {children}
+        </body>
+      </Providers>
     </html>
   );
 }
