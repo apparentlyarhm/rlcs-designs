@@ -1,30 +1,17 @@
 "use client"
 
 import { AlertIcon, ArrowUpRight, CopyIcon, HomeIcon, LikeIcon, NotFoundIcon, RandomIcon } from "@/components/icons";
-import { CarDesign } from "@/lib/types";
-import { useQuery } from '@tanstack/react-query';
+import { useDesignById } from "@/lib/data";
+import { toast } from "sonner";
 
-async function getDesignById(id: string): Promise<CarDesign | null> {
-
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/designs/${id}`, {
-        cache: 'no-store',
-    });
-
-    if (!res.ok) {
-        return null;
-    }
-
-    return res.json();
+function handleCopy(data: string) {
+  return async (event: React.MouseEvent<HTMLButtonElement>) => {
+    await navigator.clipboard.writeText(data);
+    toast("Copied!", {
+        description:"Just paste the code in Bakkesmod to use the theme!",
+    })
+  };
 }
-
-export const useDesignById = (id: string) => {
-    return useQuery({
-        queryKey: ['design', id],
-        queryFn: () => getDesignById(id),
-        enabled: !!id,
-    });
-};
 
 export default function DesignDetails({ params }: { params: { id: string } }) {
     const { data, isLoading, isError } = useDesignById(params.id);
@@ -138,7 +125,7 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
 
                     <br />
 
-                    <ul className="space-y-4">
+                    <ul className="space-y-3">
                         {Object.entries(design.items).map(([key, value]) => (
                             <li key={key} className="flex justify-between text-sm">
                                 <strong className="capitalize font-medium opacity-60">{key}</strong>
@@ -149,7 +136,7 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
 
                 </div>
 
-                <button className="btn py-10 rounded-3xl btn-info text-lg font-bold">
+                <button className="btn py-10 rounded-3xl btn-info text-lg font-bold" onClick={handleCopy(data.bakkesmodCode)}>
                     Get the code
                     <CopyIcon size={20} />
                 </button>
@@ -167,7 +154,7 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
                             <HomeIcon size={24} />
                         </button>
                     </div>
-                    
+
                     <div>
                         <div className="tooltip" data-tip="Fetch a random design">
                             <button className="btn py-10 px-6 rounded-3xl border-1 btn-neutral btn-soft text-sm">

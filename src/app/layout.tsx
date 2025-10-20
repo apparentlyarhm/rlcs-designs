@@ -3,6 +3,7 @@ import "./globals.css";
 import { nunito } from "@/config/fonts";
 import clsx from "clsx";
 import { Providers } from './providers';
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Car Designs",
@@ -22,6 +23,7 @@ export default function RootLayout({
           className={clsx('', nunito.className)}
         >
           {children}
+          <Toaster />
         </body>
       </Providers>
     </html>
