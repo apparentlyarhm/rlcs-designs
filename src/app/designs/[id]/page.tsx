@@ -29,12 +29,11 @@ export default async function DesignDetails({ params }: { params: { id: string }
 
 
     return (
-
         <div className="flex flex-col md:flex-row gap-8 w-full">
 
             <div className="w-full md:w-4/5">
                 {hasImages ? (
-                    <div className="carousel w-full rounded-3xl">
+                    <div className="carousel w-full rounded-3xl h-[90vh] aspect-video">
                         {design.imageUrls.map((url, index) => {
 
                             const prevSlide = index === 0 ? design.imageUrls.length : index;
