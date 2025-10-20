@@ -6,7 +6,7 @@ export const mockDesigns: CarDesign[] = [
     description: 'from ranked',
     player:{
       name: '@trook_rl',
-      x_link:''
+      x_link:'https://x.com/MohammedArhum'
     },
     bakkesmodCode: 'goeDAAAAAAAAAAAAAAAAAAAAAA==',
     imageUrls: ['/images/designs/trook_1.jpg', '/images/designs/trook_2.jpg'],
@@ -24,7 +24,7 @@ export const mockDesigns: CarDesign[] = [
     description: 'from ranked',
     player:{
       name: '@akaguhh',
-      x_link:''
+      x_link:'https://x.com/MohammedArhum'
     },
     bakkesmodCode: 'hgiFBcAAAAAAAAAAAAAAAAAAAA==',
     imageUrls: ['/images/designs/akaguhh1.jpg','/images/designs/akaguhh2.jpg'],
