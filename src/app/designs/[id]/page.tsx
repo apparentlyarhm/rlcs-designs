@@ -1,4 +1,4 @@
-import { CopyIcon, RandomIcon } from "@/components/icons";
+import { ArrowUpRight, CopyIcon, HomeIcon, LikeIcon, RandomIcon } from "@/components/icons";
 import { CarDesign } from "@/lib/types";
 
 async function getDesignById(id: string): Promise<CarDesign | null> {
@@ -34,7 +34,7 @@ export default async function DesignDetails({ params }: { params: { id: string }
 
             <div className="w-full md:w-4/5">
                 {hasImages ? (
-                    <div className="carousel w-full rounded-box">
+                    <div className="carousel w-full rounded-3xl">
                         {design.imageUrls.map((url, index) => {
 
                             const prevSlide = index === 0 ? design.imageUrls.length : index;
@@ -67,7 +67,23 @@ export default async function DesignDetails({ params }: { params: { id: string }
 
             <div className="w-full md:w-1/5 flex flex-col gap-6">
                 <div className="bg-base-200 p-6 rounded-box border-1 border-gray-200 hover:border-gray-400">
-                    <h1 className="text-4xl font-black">{design.player.name}</h1>
+
+                    {design.player.x_link ? (
+                        <a
+                            href={design.player.x_link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-4xl p-2 rounded-xl font-black inline-flex items-center gap-2 hover:bg-success hover:text-success-content transition-colors duration-200"
+                        >
+                            {design.player.name}
+                            <ArrowUpRight className="" />
+                        </a>
+                    ) : (
+                        <span className="text-4xl font-black inline-flex items-center gap-2">
+                            {design.player.name}
+                            <ArrowUpRight />
+                        </span>
+                    )}
 
                     <p className="mt-1 text-lg opacity-70">{design.description}</p>
 
@@ -84,20 +100,22 @@ export default async function DesignDetails({ params }: { params: { id: string }
 
                 </div>
 
-                <button className="btn py-10 rounded-3xl border-1 text-lg">
+                <button className="btn py-10 rounded-3xl btn-info text-lg">
                     Copy code
                     <CopyIcon size={20} />
                 </button>
 
-                <div className="flex flex-row gap-1">
-                    <button className="btn py-10 rounded-3xl border-1 btn-primary text-sm">
-                        Endorse
-                        <CopyIcon size={20} />
+                <div className="flex flex-row gap-1 justify-center">
+                    <button className="btn py-10 px-6 rounded-3xl border-1 btn-neutral btn-soft text-sm">
+                        <LikeIcon size={20} />
                     </button>
 
-                    <button className="btn py-10 rounded-3xl border-1 btn-secondary text-sm">
-                        Randomize
-                        <RandomIcon size={24} />
+                    <button className="btn py-10 px-12 rounded-full border-1 btn-soft btn-neutral text-sm">
+                        <HomeIcon size={24} />
+                    </button>
+
+                    <button className="btn py-10 px-6 rounded-3xl border-1 btn-neutral btn-soft text-sm">
+                        <RandomIcon size={32} />
                     </button>
                 </div>
             </div>
