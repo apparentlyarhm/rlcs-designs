@@ -129,7 +129,7 @@ export const HomeIcon: React.FC<IconSvgProps> = ({
                 <path d="M15 18H9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
                 <path d="M22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"></path>
             </g>
-        </svg>  
+        </svg>
     )
 }
 
@@ -179,6 +179,32 @@ export const AlertIcon: React.FC<IconSvgProps> = ({
                 <path d="M12 8L12 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
                 <path d="M12 16V15.9888" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
                 <path d="M3 12C3 4.5885 4.5885 3 12 3C19.4115 3 21 4.5885 21 12C21 19.4115 19.4115 21 12 21C4.5885 21 3 19.4115 3 12Z" stroke="currentColor" stroke-width="2"></path>
+            </g>
+        </svg>
+    )
+}
+
+export const NotFoundIcon: React.FC<IconSvgProps> = ({
+    size = 36,
+    width,
+    height,
+    ...props
+}) => {
+    return (
+        <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height={size || height}
+            width={size || width}
+            {...props}
+        >
+
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+                <path d="M9.5 6.5L5.5 10.5M0.5 2.5V12.5C0.5 13.0523 0.947715 13.5 1.5 13.5H13.5C14.0523 13.5 14.5 13.0523 14.5 12.5V4.5C14.5 3.94772 14.0523 3.5 13.5 3.5H7.5L5.5 1.5H1.5C0.947715 1.5 0.5 1.94772 0.5 2.5ZM7.5 11.5C5.84315 11.5 4.5 10.1569 4.5 8.5C4.5 6.84315 5.84315 5.5 7.5 5.5C9.15685 5.5 10.5 6.84315 10.5 8.5C10.5 10.1569 9.15685 11.5 7.5 11.5Z" stroke="currentColor">
+            </path>
             </g>
         </svg>
     )

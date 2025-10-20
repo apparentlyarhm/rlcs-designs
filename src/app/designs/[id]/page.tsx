@@ -1,6 +1,6 @@
 "use client"
 
-import { AlertIcon, ArrowUpRight, CopyIcon, HomeIcon, LikeIcon, RandomIcon } from "@/components/icons";
+import { AlertIcon, ArrowUpRight, CopyIcon, HomeIcon, LikeIcon, NotFoundIcon, RandomIcon } from "@/components/icons";
 import { CarDesign } from "@/lib/types";
 import { useQuery } from '@tanstack/react-query';
 
@@ -40,7 +40,18 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
 
     if (!data) {
         return (
-            <p>This page does not exist.. yet.</p>
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="flex flex-col gap-8 w-full max-w-md items-center text-center">
+                    <NotFoundIcon size={64} className="text-secondary-content" />
+
+                    <p className="text-lg">The requested design couldn't be found.</p>
+
+                    <button className="btn px-10 py-5 rounded-full border-1 btn-soft btn-neutral text-sm flex items-center justify-center gap-2">
+                        Return home
+                        <HomeIcon size={18} />
+                    </button>
+                </div>
+            </div>
         )
     }
 
