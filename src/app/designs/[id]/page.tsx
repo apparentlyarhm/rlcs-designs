@@ -31,7 +31,8 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
 
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex flex-row gap-6 items-center justify-center min-h-screen">
+                <p>Please wait</p>
                 <div className="loading loading-spinner loading-xl" />
             </div>
         );
@@ -137,23 +138,33 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
 
                 </div>
 
-                <button className="btn py-10 rounded-3xl btn-info text-lg">
-                    Copy code
+                <button className="btn py-10 rounded-3xl btn-info text-lg font-bold">
+                    Get the code
                     <CopyIcon size={20} />
                 </button>
 
                 <div className="flex flex-row gap-1 justify-center">
-                    <button className="btn py-10 px-6 rounded-3xl border-1 btn-neutral btn-soft text-sm">
-                        <LikeIcon size={20} />
-                    </button>
 
-                    <button className="btn py-10 px-12 rounded-full border-1 btn-soft btn-neutral text-sm">
-                        <HomeIcon size={24} />
-                    </button>
+                    <div className="tooltip" data-tip="Endorse this design">
+                        <button className="btn py-10 px-6 rounded-3xl border-1 btn-neutral btn-soft text-sm">
+                            <LikeIcon size={20} />
+                        </button>
+                    </div>
 
-                    <button className="btn py-10 px-6 rounded-3xl border-1 btn-neutral btn-soft text-sm">
-                        <RandomIcon size={32} />
-                    </button>
+                    <div className="tooltip" data-tip="Go to Home">
+                        <button className="btn py-10 px-12 rounded-full border-1 btn-soft btn-neutral text-sm">
+                            <HomeIcon size={24} />
+                        </button>
+                    </div>
+                    
+                    <div>
+                        <div className="tooltip" data-tip="Fetch a random design">
+                            <button className="btn py-10 px-6 rounded-3xl border-1 btn-neutral btn-soft text-sm">
+                                <RandomIcon size={32} />
+                            </button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
