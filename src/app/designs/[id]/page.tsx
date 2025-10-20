@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowUpRight, CopyIcon, HomeIcon, LikeIcon, RandomIcon } from "@/components/icons";
+import { AlertIcon, ArrowUpRight, CopyIcon, HomeIcon, LikeIcon, RandomIcon } from "@/components/icons";
 import { CarDesign } from "@/lib/types";
 import { useQuery } from '@tanstack/react-query';
 
@@ -30,7 +30,11 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
     const { data, isLoading, isError } = useDesignById(params.id);
 
     if (isLoading) {
-        return <div className="loading loading-spinner loading-xl" />;
+        return (
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="loading loading-spinner loading-xl" />
+            </div>
+        );
     }
 
     if (!data) {
@@ -39,18 +43,23 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
         )
     }
 
-    if (!isError) {
+    if (isError) {
         return (
-            <div className="flex flex-col gap-8 w-full align-center justify-center text-center">
-                <p>Error fetching design</p>
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="flex flex-col gap-8 w-full max-w-md items-center text-center">
+                    <AlertIcon size={48} className="text-error-content" />
 
-                <button className="btn py-10 px-12 max-w-sm rounded-full border-1 btn-soft btn-neutral text-lg">
-                    Return home
-                    <HomeIcon size={24} />
-                </button>
+                    <p className="text-lg">Error fetching design.</p>
+
+                    <button className="btn px-10 py-5 rounded-full border-1 btn-soft btn-neutral text-sm flex items-center justify-center gap-2">
+                        Return home
+                        <HomeIcon size={18} />
+                    </button>
+                </div>
             </div>
-        )
+        );
     }
+
     const design = data // this is just done to not refactor ALL the code below LMAO
 
     const hasImages = design.imageUrls && design.imageUrls.length > 0;
