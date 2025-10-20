@@ -7,9 +7,7 @@ import { toast } from "sonner";
 function handleCopy(data: string) {
   return async (event: React.MouseEvent<HTMLButtonElement>) => {
     await navigator.clipboard.writeText(data);
-    toast("Copied!", {
-        description:"Just paste the code in Bakkesmod to use the theme!",
-    })
+    toast.success("Copied to clipboard!")
   };
 }
 
