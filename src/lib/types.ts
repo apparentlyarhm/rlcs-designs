@@ -14,5 +14,15 @@ export interface CarDesign {
     boost: string;
     trail: string;
   };
-  createdAt: string;
+  createdAt: number;
+}
+
+export interface CarDesignSearchItem {
+  id: string;
+  description: string;
+  player: {
+    name: string,
+  }
+  image: string;
+  createdAt: number;
 }

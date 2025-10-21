@@ -1,4 +1,4 @@
-import { CarDesign } from './types';
+import { CarDesign, CarDesignSearchItem } from './types';
 
 export const mockDesigns: CarDesign[] = [
   {
@@ -17,7 +17,7 @@ export const mockDesigns: CarDesign[] = [
       boost: 'Crimson Standard',
       trail: 'Classic',
     },
-    createdAt: '2025-10-02T10:00:00Z',
+    createdAt: 1760006666,
   },
   {
     id: 'uuid2',
@@ -35,6 +35,19 @@ export const mockDesigns: CarDesign[] = [
       boost: 'Standard Pink',
       trail: 'Classic',
     },
-    createdAt: '2025-10-10T14:30:00Z',
+    createdAt: 1760506666,
   },
 ];
+
+export function convertToSearchItem(item: CarDesign): CarDesignSearchItem {
+
+  return {
+    id: item.id,
+    description: item.description,
+    player: {
+      name: item.player.name
+    },
+    image: item.imageUrls[0] ?? null,
+    createdAt: item.createdAt
+  }
+}
