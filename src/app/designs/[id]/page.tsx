@@ -3,6 +3,7 @@
 import { AlertIcon, ArrowUpRight, CopyIcon, HomeIcon, LikeIcon, NotFoundIcon, RandomIcon } from "@/components/icons";
 import { useDesignById } from "@/lib/data";
 import { toast } from "sonner";
+import { formatDistance, subDays } from "date-fns";
 
 function handleCopy(data: string) {
   return async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -119,7 +120,7 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
                         </span>
                     )}
 
-                    <p className="mt-1 text-lg opacity-70">{design.description}</p>
+                    <p className="mt-1 text-lg opacity-70">{design.description} • {formatDistance(new Date(design.createdAt * 1000), new Date(), { addSuffix: true })}</p>
 
                     <br />
 
