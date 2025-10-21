@@ -37,6 +37,24 @@ export const mockDesigns: CarDesign[] = [
     },
     createdAt: 1760506666,
   },
+  {
+    id: 'uuid3',
+    description: 'from Coupe de France Slash',
+    player:{
+      name: '@AtowRL',
+      x_link:'https://x.com/AtowRL'
+    },
+    bakkesmodCode: 'RAV5C/BCHELBCyEYEBggABznQQAA',
+    imageUrls: ['/images/designs/atow1.jpg'],
+    items: {
+      body: 'Black Fennec',
+      decal: 'Pooch',
+      wheels: 'Cristiano',
+      boost: 'Alpha Boost',
+      trail: 'Classic',
+    },
+    createdAt: 1760664620,
+  },
 ];
 
 export function convertToSearchItem(item: CarDesign): CarDesignSearchItem {
