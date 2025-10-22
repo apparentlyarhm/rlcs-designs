@@ -4,8 +4,8 @@ export function CatalogueControls() {
       <div className="flex-grow w-full">
         <input
           type="text"
-          placeholder="Search by player, team, or car..."
-          className="input input-bordered w-full"
+          placeholder="Search designs"
+          className="input border-1 py-8 rounded-full px-4 w-full"
         />
       </div>
     </div>

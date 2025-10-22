@@ -149,7 +149,7 @@ export default function DesignDetails({ params }: { params: { id: string } }) {
                     </div>
 
                     <div className="tooltip" data-tip="Go to Home">
-                        <button className="btn py-10 px-12 rounded-full border-1 btn-soft btn-neutral text-sm">
+                        <button className="btn py-10 px-12 rounded-full border-1 btn-soft btn-neutral text-sm" onClick={() => {window.location.href = '../../'}}>
                             <HomeIcon size={24} />
                         </button>
                     </div>
