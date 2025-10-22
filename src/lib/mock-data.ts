@@ -66,6 +66,6 @@ export function convertToSearchItem(item: CarDesign): CarDesignSearchItem {
       name: item.player.name
     },
     image: item.imageUrls[0] ?? null,
-    createdAt: item.createdAt
+    bakkesmod: item.bakkesmodCode
   }
 }

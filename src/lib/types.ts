@@ -24,5 +24,5 @@ export interface CarDesignSearchItem {
     name: string,
   }
   image: string;
-  createdAt: number;
+  bakkesmod: string;
 }
